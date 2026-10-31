@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anh yêu em ❤️ Nguyễn Ngọc Trinh</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffe0e9, #fff0f3, #ffd6e0);
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    z-index: 2;
+    padding: 20px;
+    width: 100%;
+}
+
+h1 {
+    color: #e60039;
+    font-size: clamp(30px, 8vw, 45px);
+    margin-bottom: 18px;
+}
+
+h2 {
+    color: #d4145a;
+    font-size: clamp(25px, 7vw, 34px);
+    margin-bottom: 30px;
+}
+
+.big-heart {
+    font-size: clamp(110px, 35vw, 160px);
+    animation: beat 1s infinite;
+    filter: drop-shadow(0 8px 18px #ff6688);
+}
+
+p {
+    color: #c2185b;
+    font-size: clamp(19px, 5vw, 25px);
+    line-height: 1.5;
+    margin-top: 30px;
+    font-weight: 600;
+}
+
+@keyframes beat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.15);
+    }
+}
+
+.small-heart {
+    position: fixed;
+    bottom: -40px;
+    color: #ff1744;
+    pointer-events: none;
+    z-index: 1;
+    animation: fly linear forwards;
+}
+
+@keyframes fly {
+    0% {
+        transform: translateY(0) scale(.6) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: .9;
+    }
+    100% {
+        transform: translateY(-110vh) scale(1.4) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Anh yêu em ❤️</h1>
+
+    <h2>Nguyễn Ngọc Trinh</h2>
+
+    <div class="big-heart">❤️</div>
+
+    <p>Em là điều đặc biệt nhất trong anh.</p>
+
+</div>
+
+<script>
+function createHeart() {
+    const heart = document.createElement("div");
+
+    heart.className = "small-heart";
+    heart.innerHTML = Math.random() > 0.5 ? "❤️" : "💕";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (14 + Math.random() * 26) + "px";
+    heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 7000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
